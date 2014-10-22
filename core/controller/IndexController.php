@@ -7,9 +7,7 @@ class IndexController extends Twig{
 
     public function __construct(URL $url){
 
-        echo $this->render('index.html', array(
-            'name' => 'Valik'
-        ));
+        echo $this->render('index/index.html');
     }
 
 

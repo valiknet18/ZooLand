@@ -8,7 +8,7 @@ abstract class Twig {
         $this->twig = new Twig_Environment($loader);
     }
 
-    protected function render($path, array $data = null){
+    protected function render($path, array $data = array()){
         $this->init();
         return $this->twig->render($path,$data);
     }
