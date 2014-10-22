@@ -1,0 +1,14 @@
+{
+    "name": "valik-pc/zoo-land",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Valik",
+            "email": "valik.v1per@gmail.com"
+        }
+    ],
+    "description": "Zoo land site",
+    "require": {
+        "twig/twig": "~1.0"
+    }
+}
