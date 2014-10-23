@@ -1,6 +1,7 @@
 <?php
 
-abstract class Twig {
+abstract class Twig
+{
     private $twig;
 
     private  function init(){
