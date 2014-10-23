@@ -8,5 +8,34 @@
 {% block content %}
 <div id='main_area_content'>
 
+    {% for animal in animals %}
+        <div>
+            <div> {{ animal.name }} </div>
+            <div>
+                <img src='{{ animal.img }}'/>
+                <p>
+                    {{ animal.text }}
+                </p>
+            </div>
+            <div>
+                Кількість: {{ animal.count }}
+            </div>
+            <div>
+                Категорія: {{ animal.cname }}
+            </div>
+            <div>
+                <div><b>Дата створення:</b> {{ animal.created_at }}</div>
+                {% if animal is not null %}
+                    <div><b>Дата останнього оновлення:</b> {{ animal.updated_at }}</div>
+                {% endif %}
+            </div>
+
+            <div>
+                <a href='/animal/{{ animal.id }}'>Повністю</a>
+            </div>
+        </div>
+    {% else %}
+        <h3>На даний момент немає ні одного запису</h3>
+    {% endfor %}
 </div>
 {% endblock %}

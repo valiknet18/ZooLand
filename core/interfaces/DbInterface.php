@@ -7,11 +7,11 @@
  */
 
 interface DbInterface {
-    public function get();
+    public function get(array $params = array());
 
-    public function update();
+    public function update(array $params = array());
 
-    public function delete();
+    public function delete(array $params = array());
 
-    public function add();
+    public function add(array $params = array());
 } 
