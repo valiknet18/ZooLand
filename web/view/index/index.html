@@ -1,0 +1,47 @@
+{% extends 'layouts/Main.html' %}
+
+{% block title %}
+        Головна сторінка
+{% endblock %}
+
+
+{% block content %}
+<div id='main_area_content'>
+    <div id="menu_add_article">
+        <a href="#">Створити новий запис</a>
+    </div>
+    {% for animal in animals %}
+        <div class='area_article'>
+            <div class="div_date">
+                <div><b>Дата створення:</b> {{ animal.created_at }}</div>
+                {% if animal is not null %}
+                <div><b>Дата останнього оновлення:</b> {{ animal.updated_at }}</div>
+                {% endif %}
+            </div>
+
+            <div class="div_category">
+                <b>Категорія:</b> {{ animal.cname }}
+            </div>
+
+            <h3> {{ animal.name }} </h3>
+            <div>
+                <img src='{{ animal.img }}'/>
+                <p>
+                    {{ animal.text }}
+                </p>
+            </div>
+            <div class="div_count_animal">
+                <b>Кількість:</b> {{ animal.count }}
+            </div>
+
+
+
+            <div class='div_link_to_full_article'>
+                <a href='/animal/{{ animal.id }}'>Повністю</a>
+            </div>
+        </div>
+    {% else %}
+        <h3>На даний момент немає ні одного запису</h3>
+    {% endfor %}
+</div>
+{% endblock %}
