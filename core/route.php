@@ -18,7 +18,7 @@ class Route
                 break;
 
             default: {
-                //Помилка
+
             }
         }
 

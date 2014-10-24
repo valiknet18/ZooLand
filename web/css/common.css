@@ -1,0 +1,85 @@
+#clear{
+    clear:both;
+}
+
+body{
+    font-family: "Trebuchet MS";
+}
+
+#webber {
+    width: 800px;
+    border: 1px solid #000000;
+    margin: 2px auto;
+    background-color: #ffffff;
+}
+
+#webber header{
+    display: block;
+    background-color:  #2e31ff;
+    border: 1px solid #2e31ff;
+}
+
+
+#webber header #nav ul li{
+    float:left;
+    margin-right: 10px;
+    list-style:none;
+}
+
+#webber header #nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+#webber #content{
+    clear: both;
+    border:1px solid #000000;
+}
+
+#webber #content #menu_add_article{
+    text-align:right;
+    margin-right: 20px;
+}
+
+#webber #content .area_article h3{
+    clear:both;
+    text-align: center;
+}
+
+#webber #content .area_article{
+    margin: 5px 0px;
+    border-top:1px dashed #000000;
+    border-bottom:1px dashed #000000;
+    padding: 10px 20px;
+}
+
+#webber #content .area_article div img{
+    float: left;
+    margin: 10px;
+    width: 150px;
+    max-height: 600px;
+}
+
+#webber #content .area_article div p{
+    padding-top: 10px;
+}
+
+#webber #content .area_article .div_count_animal{
+    clear: both;
+}
+
+#webber #content .area_article .div_date div{
+    float: right;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+#webber #content .area_article .div_link_to_full_article{
+    clear:both;
+    text-align: right;
+}
+
+#webber #content .area_article .div_category{
+    font-size: 13px;
+}
