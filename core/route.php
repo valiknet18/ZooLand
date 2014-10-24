@@ -1,6 +1,5 @@
 <?php
-require_once "libs/Error404Exception.php";
-require_once "controller/IndexController.php";
+
 
 class Route
 {

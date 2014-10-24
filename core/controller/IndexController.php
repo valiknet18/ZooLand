@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__.'/../libs/Twig.php';
-require_once __DIR__.'/../model/AnimalsModel.php';
 
 
 class IndexController extends Twig{
