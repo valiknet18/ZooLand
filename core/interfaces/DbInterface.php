@@ -6,7 +6,8 @@
  * Time: 12:29
  */
 
-interface DbInterface {
+interface DbInterface
+{
     public function get(array $params = array());
 
     public function update(array $params = array());

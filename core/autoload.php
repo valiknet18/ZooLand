@@ -3,6 +3,7 @@
 require_once "libs/URL.php";
 require_once 'libs/Twig.php';
 require_once "libs/Error404Exception.php";
+require_once "libs/String.php";
 
 //include another files
 require_once "../config/main.php";
@@ -22,8 +23,9 @@ require_once "route.php";
 
 class Autoload
 {
-	public function __construct(){
-        new Route(new URL());
+	public function __construct()
+    {
+        new Route((new URL())->getUrl());
 	}
 
 }

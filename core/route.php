@@ -4,15 +4,17 @@
 class Route
 {
 //    Контруктов, тут відбувається вся основна робота
-    public function __construct(URL $url){
-        switch($url->parseGetUrl()[0]){
+    public function __construct(array $url)
+    {
+
+        switch($url[0]){
             case 'index':{
                new IndexController($url);
             }
                 break;
 
-            case 'animals':{
-
+            case 'animal':{
+                new AnimalController($url);
             }
                 break;
 
@@ -22,9 +24,4 @@ class Route
         }
 
     }
-
-
-
-
-
 }

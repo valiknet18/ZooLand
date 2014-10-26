@@ -1,5 +1,6 @@
 <?php 
 
-interface ZooInterface{
+interface ZooInterface
+{
 		
 }

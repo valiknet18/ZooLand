@@ -1,9 +1,11 @@
 <?php
 
-abstract class DbClass{
+abstract class DbClass
+{
     protected $pdo;
 
-    public function init(){
+    public function init()
+    {
         $dsn = "mysql:host=".Config::$host.";dbname=".Config::$name_db.";charset=utf8";
 
         try {
@@ -14,7 +16,8 @@ abstract class DbClass{
         }
     }
 
-    public function querySelect($query, array $params = array()){
+    public function querySelect($query, array $params = array())
+    {
         if(!$this->pdo){
             $this->init();
         }
@@ -36,7 +39,8 @@ abstract class DbClass{
     }
 
 
-    public function queryAdd($query, array $params = array()){
+    public function queryAdd($query, array $params = array())
+    {
         if(!$this->pdo){
             $this->init();
         }
@@ -53,7 +57,8 @@ abstract class DbClass{
         return $q;
     }
 
-    public function queryUpdate($query, array $params = array()){
+    public function queryUpdate($query, array $params = array())
+    {
         if(!$this->pdo){
             $this->init();
         }
@@ -70,7 +75,8 @@ abstract class DbClass{
         return $q;
     }
 
-    public function queryDelete($query, array $params = array()){
+    public function queryDelete($query, array $params = array())
+    {
         if(!$this->pdo){
             $this->init();
         }
