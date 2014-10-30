@@ -1,6 +1,7 @@
 <?php
 namespace Valiknet\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Valiknet\Libs\Twig;
 use Valiknet\Libs\String;
 use Valiknet\Model\AnimalsModel;
@@ -9,7 +10,12 @@ class IndexController extends Twig
 {
     protected  $twig;
 
-    public function __construct(array $url)
+    public function __construct()
+    {
+
+    }
+
+    public function getIndex(array $url)
     {
         $animals = new AnimalsModel();
         $animals = $animals->get();
@@ -19,9 +25,11 @@ class IndexController extends Twig
             $animal['text'] = $str->cutsString(300);
         }
 
-        echo $this->render('index/index.html', array(
+        return new Response($this->render('index/index.html', array(
             "animals" => $animals
-        ));
+        )),
+        200,
+        array("Content-type"=>"text/html"));
     }
 
 

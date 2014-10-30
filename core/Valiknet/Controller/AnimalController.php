@@ -2,10 +2,19 @@
 namespace Valiknet\Controller;
 
 use Valiknet\Libs\Twig;
+use Valiknet\Model\AnimalsModel;
+use Valiknet\Libs\Error404Exception;
+use Symfony\Component\HttpFoundation\Response;
 
 class AnimalController extends Twig
 {
-    public function __construct(array $url)
+    public function __construct()
+    {
+
+
+    }
+
+    public function routing(array $url)
     {
         switch($url[1]){
             //Post
@@ -51,30 +60,29 @@ class AnimalController extends Twig
                 break;
 
             default:{
-                if(intval($url[1]))
-                    $this->fullAnimalGet($url);
-
+            if(intval($url[1]))
+                return $this->fullAnimalGet($url);
             }
         }
-
     }
-
 
     private function fullAnimalGet(array $array)
     {
         $animals = new AnimalsModel();
 
         if(!$animals->get($array)){
-            throw new  Error404Exception();
+            throw new Error404Exception();
         }
 
         $animal = $animals->get();
 
 
 
-        echo $this->render('animal/fullAnimal.html', array(
+        return new Response($this->render('animal/fullAnimal.html', array(
             "animal" => $animal[0]
-        ));
+        )),
+        200,
+        array("Content-type" => "text/html"));
     }
 
 

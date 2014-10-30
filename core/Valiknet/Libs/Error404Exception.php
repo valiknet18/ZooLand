@@ -1,7 +1,7 @@
 <?php
 namespace Valiknet\Libs;
 
-class Error404Exception extends Exception
+class Error404Exception extends \Exception
 {
     public function __construct()
     {
