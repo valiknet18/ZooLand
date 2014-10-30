@@ -1,5 +1,7 @@
 <?php
-class Config
+namespace Valiknet\Config;
+
+class Main
 {
     public static $name_db = "ZooLand";
     public static $host = "localhost";

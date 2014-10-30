@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: valik-pc
- * Date: 26.10.14
- * Time: 13:45
- */
+namespace Valiknet\Libs;
 
 class String
 {

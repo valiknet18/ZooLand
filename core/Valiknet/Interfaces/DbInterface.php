@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: valik-pc
- * Date: 23.10.14
- * Time: 12:29
- */
+namespace Valiknet\Interfaces;
 
 interface DbInterface
 {

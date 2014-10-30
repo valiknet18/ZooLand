@@ -1,11 +1,8 @@
 <?php
+require __DIR__."/../vendor/autoload.php";
 
+use Valiknet\Libs\URL;
+use Valiknet\Route;
 
-    ini_set('error_reporting', E_ALL);
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-
-   require "../core/autoload.php";
-
-    new Autoload();
+new Route(array('index'));
 

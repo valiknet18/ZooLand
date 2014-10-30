@@ -1,5 +1,9 @@
 <?php
+namespace Valiknet\Controller;
 
+use Valiknet\Libs\Twig;
+use Valiknet\Libs\String;
+use Valiknet\Model\AnimalsModel;
 
 class IndexController extends Twig
 {

@@ -1,4 +1,7 @@
 <?php
+namespace Valiknet\Libs;
+
+use Valiknet\Config\Main as Config;
 
 abstract class DbClass
 {
@@ -9,9 +12,9 @@ abstract class DbClass
         $dsn = "mysql:host=".Config::$host.";dbname=".Config::$name_db.";charset=utf8";
 
         try {
-            $this->pdo = new PDO($dsn,Config::$name_user,Config::$password);
+            $this->pdo = new \PDO($dsn,Config::$name_user,Config::$password);
         }
-        catch(PDOException $e){
+        catch(\PDOException $e){
             die('Ошибка підключення: '.$e->getMessage());
         }
     }

@@ -1,0 +1,57 @@
+{% extends 'layouts/Main.html' %}
+
+
+{% block title %}
+    Назва тваринки
+{% endblock %}
+
+
+
+{% block content %}
+<div class='area_article'>
+    <form action="" method="POST">
+        <div>
+            <label for="image_animal">
+                Фотограція
+            </label>
+            <input type="file" id="image_animal" name="image_animal"/>
+        </div>
+
+        <div>
+            <label for="name_animal">
+                Назва тварини
+            </label>
+            <input type='text' id="name_animal" name="name_animal"/>
+        </div>
+
+        <div>
+            <label for="text_animal">
+                Опис тварини
+            </label>
+            <textarea id="text_animal" name="text_animal">
+
+            </textarea>
+        </div>
+
+        <div>
+            <label for="count_animal">
+                Кількість тварин
+            </label>
+            <input type="text" id="count_animal" name="count_animal"/>
+        </div>
+
+        <div>
+            <label for="category_animal">
+                Категорія
+            </label>
+            <select id="category_animal" name="category_animal">
+                <option></option>
+            </select>
+        </div>
+
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</div>
+{% endblock %}

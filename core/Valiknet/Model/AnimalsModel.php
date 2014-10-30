@@ -1,10 +1,9 @@
-
 <?php
-require_once __DIR__."/../interfaces/DbInterface.php";
-require_once __DIR__."/../libs/DbClass.php";
+namespace Valiknet\Model;
 
 
-
+use Valiknet\Libs\DbClass;
+use Valiknet\Interfaces\DbInterface;
 /*
  * table animals
  *  id

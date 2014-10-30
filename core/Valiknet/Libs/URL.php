@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: valik-pc
- * Date: 22.10.14
- * Time: 19:50
- */
+namespace Valiknet\Libs;
 
 class URL
 {
@@ -15,8 +10,10 @@ class URL
         }
 
         $url = explode('/',$_GET['url']);
+        if(isset($url[1]) && !intval($url[1])){
+            $url[1] .= "Get";
+        }
 
-        $url['method'] = "Get";
         return $url;
     }
 
@@ -28,7 +25,10 @@ class URL
 
         $url = explode('/',$_POST['url']);
 
-        $url['method'] = "Post";
+        if(isset($url[1]) && !intval($url[1])){
+            $url[1] .= "Post";
+        }
+
         return $url;
     }
 
@@ -51,6 +51,5 @@ class URL
                 return false;
             }
         }
-
     }
 } 

@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: valik-pc
- * Date: 24.10.14
- * Time: 19:58
- */
+namespace Valiknet\Controller;
+
+use Valiknet\Libs\Twig;
 
 class AnimalController extends Twig
 {
@@ -39,7 +36,7 @@ class AnimalController extends Twig
                 break;
 
             case 'addGet':{
-
+                $this->addAnimalGet();
             }
                 break;
 
@@ -63,7 +60,7 @@ class AnimalController extends Twig
     }
 
 
-    public function fullAnimalGet(array $array)
+    private function fullAnimalGet(array $array)
     {
         $animals = new AnimalsModel();
 
@@ -78,5 +75,11 @@ class AnimalController extends Twig
         echo $this->render('animal/fullAnimal.html', array(
             "animal" => $animal[0]
         ));
+    }
+
+
+    private function addAnimalGet()
+    {
+        echo $this->render('animal/addAnimal.html');
     }
 }
