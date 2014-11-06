@@ -26,7 +26,7 @@ class AnimalsModel extends DbClass implements DbInterface
     public function get(array $params = array())
     {
         if(isset($params['id'])){
-            $sql = "SELECT * FROM animals WHERE id = ?";
+            $sql = "SELECT * FROM animals AS a INNER JOIN categories AS cat ON cat.id = a.category_id WHERE a.id = ?";
             return ($this->querySelect($sql,array($params['id'])))?:false;
         }
 
@@ -35,7 +35,7 @@ class AnimalsModel extends DbClass implements DbInterface
             return ($this->querySelect($sql,array($params['category_id'])))?:false;
         }
 
-        $sql = "SELECT * FROM animals,categories WHERE categories.id = animals.category_id  LIMIT 10";
+        $sql = "SELECT * FROM animals as a INNER JOIN categories AS cat ON cat.id = a.category_id LIMIT 10";
         return $this->querySelect($sql);
     }
 

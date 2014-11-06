@@ -21,7 +21,9 @@ $route->get('/animal/view/{id}', array($animalController, 'getFullAnimal'));
 $route->get('/animal/add', array($animalController, 'getAddAnimal'));
 $route->get('/category/view/{id}', array($categoryController, 'getCategoryById'));
 $route->get('/category/list', array($categoryController, 'getListCategory'));
+$route->get('/animal/edit/{id}', array($categoryController, ''));
 
+$route->delete('/animal/delete/', array());
 
 $dispatcher = new Dispatcher($route);
 $response = $dispatcher->dispatch($request->getMethod(), parse_url($request->getPathInfo(), PHP_URL_PATH));
