@@ -8,7 +8,7 @@
 {% block content %}
 <div id='main_area_content'>
     <div id="menu_add_article">
-        <a href="#">Створити новий запис</a>
+        <a href="/animal/add">Створити новий запис</a>
     </div>
     {% for animal in animals %}
         <div class='area_article'>
@@ -37,7 +37,7 @@
 
 
             <div class='div_link_to_full_article'>
-                <a href='/animal/{{ animal.id }}'>Повністю</a>
+                <a href='/animal/view/{{ animal.id }}'>Повністю</a>
             </div>
         </div>
     {% else %}

@@ -45,7 +45,9 @@
                 Категорія
             </label>
             <select id="category_animal" name="category_animal">
-                <option></option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.cname }}</option>
+                {% endfor %}
             </select>
         </div>
 

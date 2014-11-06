@@ -1,20 +1,19 @@
 {
-    "name": "valik-pc/zoo-land",
-    "type": "project",
+    "name": "valik-pc/homework2",
     "authors": [
         {
             "name": "Valik",
             "email": "valik.v1per@gmail.com"
         }
     ],
-    "description": "Zoo land site",
     "require": {
-        "twig/twig": "~1.0",
-        "symfony/http-foundation": "2.6.*@dev"
+        "symfony/http-foundation": "2.6.*@dev",
+        "phroute/phroute": "1.*",
+        "phpunit/phpunit": "4.3.*",
+        "twig/twig": "1.16.*@dev"
+
     },
-    "autoload":{
-        "psr-0":{
-            "Valiknet":"core/"
-        }
+    "autoload": {
+        "psr-0": {"Valiknet": "core/"}
     }
 }

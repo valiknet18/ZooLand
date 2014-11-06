@@ -1,0 +1,15 @@
+{% extends 'layouts/Main.html' %}
+
+{% block title %}
+        Список категорій
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href='/category/view/{{ category.id }}'>{{ category.cname }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

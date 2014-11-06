@@ -15,7 +15,7 @@ class IndexController extends Twig
 
     }
 
-    public function getIndex(array $url)
+    public function getIndex()
     {
         $animals = new AnimalsModel();
         $animals = $animals->get();
@@ -26,12 +26,10 @@ class IndexController extends Twig
         }
 
         return new Response($this->render('index/index.html', array(
-            "animals" => $animals
-        )),
-        200,
-        array("Content-type"=>"text/html"));
+                "animals" => $animals
+            )),
+            200,
+            array("Content-type"=>"text/html")
+        );
     }
-
-
-
 } 
