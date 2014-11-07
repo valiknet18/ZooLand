@@ -94,3 +94,16 @@ body{
     list-style: none;
     margin: 3px 0px 3px 10px;
 }
+
+#webber #content #create_category_webber > div{
+    margin-left: 50px;
+}
+
+#webber #content #create_category_webber form div{
+    float: left;
+    margin-left:20px;
+}
+
+#webber #content #list_category_webber{
+    clear: both;
+}

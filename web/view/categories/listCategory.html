@@ -5,11 +5,30 @@
 {% endblock %}
 
 {% block content %}
-    <ul>
-        {% for category in categories %}
+    <div id="create_category_webber">
+        <div>
+            <h4>
+                Створення нової категорії
+            </h4>
+        </div>
+        <form id="create_category" action="/category/create" method="POST">
+            <div>
+                <input type="text" required/>
+            </div>
+
+            <div>
+                <input type="submit" value="Створити"/>
+            </div>
+        </form>
+    </div>
+    <div id="list_category_webber">
+        <h4>Список категорій</h4>
+        <ul id="list_category">
+            {% for category in categories %}
             <li>
                 <a href='/category/view/{{ category.id }}'>{{ category.cname }}</a>
             </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

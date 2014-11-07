@@ -5,11 +5,17 @@
     Назва тваринки
 {% endblock %}
 
-
+{% block script %}
+<script src="../../js/jquery.ui.widget.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="../../js/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="../../js/jquery.fileupload.js"></script>
+{% endblock %}
 
 {% block content %}
 <div class='area_article'>
-    <form action="" method="POST">
+    <form action="/animal/create" name="form_create_animal" method="POST">
         <div>
             <label for="image_animal">
                 Фотограція
@@ -28,9 +34,7 @@
             <label for="text_animal">
                 Опис тварини
             </label>
-            <textarea id="text_animal" name="text_animal">
-
-            </textarea>
+            <textarea id="text_animal" name="text_animal"></textarea>
         </div>
 
         <div>
