@@ -8,7 +8,7 @@ class CategoryModel extends DbClass implements DbInterface
 {
     public function get(array $array = array())
     {
-        return $this->querySelect("SELECT * FROM categories");
+        return $this->querySelect("SELECT * FROM categories ORDER BY id DESC");
     }
 
     /**
@@ -19,9 +19,16 @@ class CategoryModel extends DbClass implements DbInterface
 
     }
 
-    public function add(array $array = array())
+    public function add($str)
     {
+        list($name, $value) = explode("=",$str);
+        $data[$name] = $value;
 
+        $sql = "INSERT INTO categories(cname) VALUES(?)";
+        if($this->queryAdd($sql, array($data["name_category"]))){
+            return $this->get();
+        }
+        return false;
     }
 
     public function delete(array $array = array())

@@ -2,6 +2,7 @@
 namespace Valiknet\Model;
 
 
+use Symfony\Component\HttpFoundation\Request;
 use Valiknet\Libs\DbClass;
 use Valiknet\Interfaces\DbInterface;
 /*
@@ -49,9 +50,26 @@ class AnimalsModel extends DbClass implements DbInterface
 
     }
 
-    public function add(array $params = array())
+    public function add($str)
     {
+        $arrayStrings = explode("&", $str);
 
+        $data = array();
+
+        foreach($arrayStrings as $value){
+            list($name, $val) = explode("=", $value);
+            $data[$name] = $val;
+        }
+
+
+        if(count($data) == 5){
+            if($this->saveFile()){
+                $sql = "INSERT INTO animals(name, text, img, count, category_id, create_at) VALUES(?, ?, ?, ?, ?, ?)";
+                return $this->queryAdd($sql,array($data['name_animal'], $data['text_animal'], basename($_FILES['image_animal']['name']), $data['count_animal'], $data['category_animal'], new \DateTime()));
+            }
+            return false;
+        }
+        return false;
     }
 
 } 

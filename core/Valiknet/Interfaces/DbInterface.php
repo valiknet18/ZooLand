@@ -9,5 +9,5 @@ interface DbInterface
 
     public function delete(array $params = array());
 
-    public function add(array $params = array());
+    public function add($str);
 } 

@@ -5,6 +5,7 @@ use Valiknet\Libs\Twig;
 use Valiknet\Model\AnimalsModel;
 use Symfony\Component\HttpFoundation\Response;
 use Valiknet\Model\CategoryModel;
+use Symfony\Component\HttpFoundation\Request;
 
 class AnimalController extends Twig
 {
@@ -37,6 +38,34 @@ class AnimalController extends Twig
             )),
             200,
             array("Content-type" => "text/html")
+        );
+    }
+
+    public function postCreateAnimal()
+    {
+        $request = new Request();
+        $animalsModel = new AnimalsModel();
+
+        $form = $request->getContent();
+
+        if($animalsModel->add($form)){
+            $response = array(
+                "code" => "200"
+            );
+        }
+        else{
+            $response = array(
+                "code" => "404"
+            );
+        }
+
+
+        return new Response(
+            json_encode($response),
+            200,
+            array(
+                "Content-type" => "application/json"
+            )
         );
     }
 }

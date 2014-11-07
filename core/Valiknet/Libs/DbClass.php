@@ -7,7 +7,7 @@ abstract class DbClass
 {
     protected $pdo;
 
-    public function init()
+    protected function init()
     {
         $dsn = "mysql:host=".Config::$host.";dbname=".Config::$name_db.";charset=utf8";
 
@@ -19,7 +19,7 @@ abstract class DbClass
         }
     }
 
-    public function querySelect($query, array $params = array())
+    protected function querySelect($query, array $params = array())
     {
         if(!$this->pdo){
             $this->init();
@@ -42,7 +42,7 @@ abstract class DbClass
     }
 
 
-    public function queryAdd($query, array $params = array())
+    protected function queryAdd($query, array $params = array())
     {
         if(!$this->pdo){
             $this->init();
@@ -60,7 +60,7 @@ abstract class DbClass
         return $q;
     }
 
-    public function queryUpdate($query, array $params = array())
+    protected function queryUpdate($query, array $params = array())
     {
         if(!$this->pdo){
             $this->init();
@@ -78,7 +78,7 @@ abstract class DbClass
         return $q;
     }
 
-    public function queryDelete($query, array $params = array())
+    protected function queryDelete($query, array $params = array())
     {
         if(!$this->pdo){
             $this->init();
@@ -94,5 +94,19 @@ abstract class DbClass
         }
 
         return $q;
+    }
+
+    protected function saveFile()
+    {
+        $file = $_FILES['image_animal'];
+        if(!$file['error']){
+            $basename = "img/public/" . basename($file['name']);
+            if(move_uploaded_file($file['tmp_name'],$basename)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
     }
 } 

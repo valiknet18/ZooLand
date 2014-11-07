@@ -1,6 +1,7 @@
 <?php
 namespace Valiknet\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Valiknet\Libs\String;
 use Symfony\Component\HttpFoundation\Response;
 use Valiknet\Libs\Twig;
@@ -60,6 +61,33 @@ class CategoryController extends Twig{
             ),
             200,
             array("Content-type"=>"text/html")
+        );
+    }
+
+    public function postCreateCategory()
+    {
+        $request = new Request();
+        $categoryModel = new CategoryModel();
+
+        $data = $request->getContent();
+
+        if(false === $data = $categoryModel->add($data)){
+            $response = array(
+                "code" => 404
+            );
+        } else{
+            $response = array(
+                "code" => 200,
+                "data" => $data
+            );
+        }
+
+        return new Response(
+            json_encode($response, true),
+            200,
+            array(
+                "Content-type" => "application/json"
+            )
         );
     }
 } 
