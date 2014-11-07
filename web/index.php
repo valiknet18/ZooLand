@@ -29,6 +29,7 @@ $route->get('/category/view/{id}', array($categoryController, 'getCategoryById')
 $route->get('/category/list', array($categoryController, 'getListCategory'));
 $route->get('/category/create', array($categoryController, 'getCreateCategory'));
 $route->post('/category/create', array($categoryController, 'postCreateCategory'));
+$route->delete('/category/delete/{id}', array($categoryController, 'deleteCategory'));
 
 $dispatcher = new Dispatcher($route);
 $response = $dispatcher->dispatch($request->getMethod(), parse_url($request->getPathInfo(), PHP_URL_PATH));

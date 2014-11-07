@@ -90,4 +90,29 @@ class CategoryController extends Twig{
             )
         );
     }
+
+    public function deleteCategory($id)
+    {
+        $categoryModel = new CategoryModel();
+
+        if(false === $data = $categoryModel->delete(array('id' => $id))){
+            $response = array(
+                "code" => 404
+            );
+        }
+        else{
+            $response = array(
+                "code" => 200,
+                "data" => $data
+            );
+        }
+
+        return new Response(
+            json_encode($response, true),
+            200,
+            array(
+                "Content-type" => "application/json"
+            )
+        );
+    }
 } 

@@ -38,7 +38,39 @@ $(document).on('submit', '#create_category', function(e){
                 str = "";
                 $.each(data['data'],function(key,value){
                     str += "<li>";
-                        str += "<a href='/category/view/" + value.id + "'>" + value.cname + "</a>";
+                        str += "<a href='/category/view/" + value.id + "'>" + value.cname + "</a> | <a href='/category/delete/" + value.id + "' class='delete_category'>Видалити</a>";
+                    str += "</li>";
+                });
+
+                $('#list_category').html(str);
+            }
+                break;
+
+            case 404: {
+
+            }
+                break;
+        }
+    })
+});
+
+
+$(document).on('click', '.delete_category', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+
+    $.ajax({
+        url: url,
+        type: "DELETE"
+    }).done(function(data,status){
+
+        var data = eval(data);
+        switch(data['code']) {
+            case 200: {
+                str = "";
+                $.each(data['data'],function(key,value){
+                    str += "<li>";
+                    str += "<a href='/category/view/" + value.id + "'>" + value.cname + "</a> | <a href='/category/delete/" + value.id + "' class='delete_category'>Видалити</a>";
                     str += "</li>";
                 });
 

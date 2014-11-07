@@ -33,6 +33,16 @@ class CategoryModel extends DbClass implements DbInterface
 
     public function delete(array $array = array())
     {
+        if(isset($array['id'])){
+            $sql = "DELETE FROM categories WHERE id = ?";
+
+            if($this->queryDelete($sql, array($array['id']))){
+                return $this->get();
+            }
+
+            return false;
+        }
+
 
     }
 } 
