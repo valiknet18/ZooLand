@@ -16,6 +16,9 @@ class AnimalController extends Twig
 
     public function getFullAnimal($id)
     {
+//        if(preq_match())
+//            return new Response("", 404);
+
         $animals = new AnimalsModel();
 
         $animal = $animals->get(array('id' => $id));
@@ -48,24 +51,24 @@ class AnimalController extends Twig
 
         $form = $request->getContent();
 
-        if($animalsModel->add($form)){
-            $response = array(
-                "code" => "200"
-            );
-        }
-        else{
-            $response = array(
-                "code" => "404"
-            );
-        }
-
-
-        return new Response(
-            json_encode($response),
-            200,
-            array(
-                "Content-type" => "application/json"
-            )
-        );
+//        if($animalsModel->add($form)){
+//            $response = array(
+//                "code" => "200"
+//            );
+//        }
+//        else{
+//            $response = array(
+//                "code" => "404"
+//            );
+//        }
+//
+//
+//        return new Response(
+//            json_encode($response),
+//            200,
+//            array(
+//                "Content-type" => "application/json"
+//            )
+//        );
     }
 }
