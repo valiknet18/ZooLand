@@ -69,6 +69,7 @@ class AnimalsModel extends DbClass implements DbInterface
             }
             return false;
         }
+
         return false;
     }
 

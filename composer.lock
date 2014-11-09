@@ -756,12 +756,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "296df31964a95e880a83f8c6afe84a18001751ee"
+                "reference": "8d6ab2d294400bb03e33565a1fd284bba87e932c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/296df31964a95e880a83f8c6afe84a18001751ee",
-                "reference": "296df31964a95e880a83f8c6afe84a18001751ee",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8d6ab2d294400bb03e33565a1fd284bba87e932c",
+                "reference": "8d6ab2d294400bb03e33565a1fd284bba87e932c",
                 "shasum": ""
             },
             "require": {
@@ -800,7 +800,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-02 00:37:13"
+            "time": "2014-11-04 14:29:39"
         },
         {
             "name": "symfony/yaml",

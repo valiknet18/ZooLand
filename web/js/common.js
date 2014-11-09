@@ -1,29 +1,31 @@
 $(document).on('submit','form[name=form_create_animal]',function(e){
     e.preventDefault();
-    var form = $('form[name=form_create_animal]').serialize();
+    //var form = $('form[name=form_create_animal]');
+    //
+    //var formData = new FormData(form);
+    //formData.append("file");
+    //formData.append("image_animal", $('#image_animal').val());
+    //formData.append("name_animal", $('#name_animal').val());
 
-    $('#image_animal').fileupload({
-        url: $('form[name=form_create_animal]').attr("action"),
-        dataType: 'json',
-        data: form,
-        done: function (e, data) {
+    //console.log(formData);
 
-        }
-    });
+    //console.log(JSON.parse(formData));
+
     //$.ajax({
-    //    url: $('form[name=form_create_animal]').attr("action"),
-    //    data: form,
-    //    type: "POST"
+    //    url: "/animal/create",
+    //    data: {data: formData.toString()},
+    //    type: "POST",
     //}).done(function(data){
     //    console.log(data);
     //});
+
+
 });
 
 
 $(document).on('submit', '#create_category', function(e){
     e.preventDefault();
     var name_category = $('#create_category input[type=text]').val();
-    $('#create_category input[type=text]').attr("value", " ");
     $('#create_category input[type=text]').val("");
     $.ajax({
         url: "/category/create",
