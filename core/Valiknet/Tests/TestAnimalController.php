@@ -5,15 +5,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Valiknet\Controller\AnimalController;
 
 class TestAnimalController extends PHPUnit_Framework_TestCase {
-
-
     public function testFullAnimal()
     {
-        $client = new Request();
+        $animalController = new AnimalController();
 
-        $crawler = $client->get('/animal/view/test');
-
-//        $this->assertEquals(404, "");
+        $this->assertEquals(404, $animalController->getFullAnimal("test")->getStatusCode());
+        $this->assertEquals(200, $animalController->getFullAnimal("5")->getStatusCode());
+        $this->assertEquals(200, $animalController->getFullAnimal(5)->getStatusCode());
     }
 }
- 

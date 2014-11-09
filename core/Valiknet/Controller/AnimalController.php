@@ -16,8 +16,8 @@ class AnimalController extends Twig
 
     public function getFullAnimal($id)
     {
-//        if(preq_match())
-//            return new Response("", 404);
+        if(!preg_match('/\d/', $id))
+            return new Response("<h3>404. Page not found</h3>", 404, array('Content-type' => 'text/html'));
 
         $animals = new AnimalsModel();
 
