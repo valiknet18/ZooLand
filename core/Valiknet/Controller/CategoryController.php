@@ -28,6 +28,10 @@ class CategoryController extends Twig{
 
     public function getCategoryById($id)
     {
+
+        if(preg_match('/\d/', $id))
+            return new Response("<h3>404. File not found</h3>", 404, array("Content-type" => "text/html"));
+
         $animals = new AnimalsModel();
 
         $animalsList = $animals->get(array('category_id' => $id));
